@@ -27,4 +27,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     compile 'com.ibm.watson.developer_cloud:android-sdk:0.4.3'
     compile 'com.ibm.watson.developer_cloud:java-sdk:5.4.0'
+    compile 'com.google.code.gson:gson:2.8.0'
+
 }
