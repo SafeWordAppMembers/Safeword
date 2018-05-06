@@ -48,6 +48,7 @@ public abstract class SetupSActivity extends AppCompatActivity {
         Button saveButton = findViewById(R.id.saveButton);
 
         fillEditText(phone1, phone2, phone3);
+        username.setText("Elizabeth");
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
