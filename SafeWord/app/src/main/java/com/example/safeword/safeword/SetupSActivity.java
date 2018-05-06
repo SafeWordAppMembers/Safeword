@@ -10,18 +10,23 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 
 public abstract class SetupSActivity extends AppCompatActivity {
-    private static final String FILENAME = "info.sav";
-    private ArrayList<String> phoneNumbers = new ArrayList<String>();
+    protected static final String FILENAME = "info.sav";
+    protected ArrayList<String> phoneNumbers = new ArrayList<String>();
     private EditText username;
     private EditText phone1;
     private EditText phone2;
@@ -42,7 +47,7 @@ public abstract class SetupSActivity extends AppCompatActivity {
         phone3 = findViewById(R.id.phone3);
         Button saveButton = findViewById(R.id.saveButton);
 
-        setHints(phone1, phone2, phone3);
+        fillEditText(phone1, phone2, phone3);
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,7 +88,7 @@ public abstract class SetupSActivity extends AppCompatActivity {
         });
     }
 
-    public abstract void setHints(EditText... views);
+    public abstract void fillEditText(EditText... views);
 
     private boolean checkIfContactExists(String... contacts){
         for (String contact : contacts) {
@@ -106,6 +111,23 @@ public abstract class SetupSActivity extends AppCompatActivity {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    protected void loadFromFile() {
+
+        try {
+            FileInputStream fis = openFileInput(FILENAME);
+            BufferedReader in = new BufferedReader(new InputStreamReader(fis));
+
+            Gson gson = new Gson();
+
+            Type listType = new TypeToken<ArrayList<String>>(){}.getType();
+
+            phoneNumbers = gson.fromJson(in, listType);
+
+        } catch (FileNotFoundException e) {
+            phoneNumbers = new ArrayList<String>();
         }
     }
 }
