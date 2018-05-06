@@ -15,7 +15,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:lineSpacingExtra="14sp"
-        android:text=" This application was created to empower women through providing a way of protecting them against harrasment. The application will use voice recognition as a way of indication that the user is in danger and an SMS message will be sent to the police and a family member of the user's choice."
+        android:text=" This application was created to empower women through providing a way of protecting them against harrasment. The application will use voice recognition as a way of indication that the user is in danger. An SMS message will be sent to the police and a family member of the user's choice."
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
