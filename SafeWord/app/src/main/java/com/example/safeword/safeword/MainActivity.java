@@ -1,6 +1,7 @@
 package com.example.safeword.safeword;
 
 import android.app.PendingIntent;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -77,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
             intent.setAction(Intent.ACTION_VIEW);
             intent.addCategory(Intent.CATEGORY_BROWSABLE);
             intent.setData(Uri.parse("http://2cc0eb50.ngrok.io/make_call_function"));
+            intent.setPackage("com.android.chrome");
             startActivity(intent);
         }
     };
