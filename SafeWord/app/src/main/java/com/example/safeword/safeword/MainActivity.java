@@ -70,8 +70,13 @@ public class MainActivity extends AppCompatActivity {
     View.OnClickListener message = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(Intent.ACTION_SENDTO,Uri.parse(getTxtString()));
-            intent.putExtra("sms_body", "This is Elizabeth. I am in danger right now. My location is at: DEVICE LOCATION HERE");
+//            Intent intent = new Intent(Intent.ACTION_SENDTO,Uri.parse(getTxtString()));
+//            intent.putExtra("sms_body", "This is Elizabeth. I am in danger right now. My location is at: DEVICE LOCATION HERE");
+//            startActivity(intent);
+            Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_VIEW);
+            intent.addCategory(Intent.CATEGORY_BROWSABLE);
+            intent.setData(Uri.parse("http://2cc0eb50.ngrok.io/make_call_function"));
             startActivity(intent);
         }
     };
