@@ -33,7 +33,6 @@ public abstract class SetupSActivity extends AppCompatActivity {
     private EditText phone3;
     private Button saveButton;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
