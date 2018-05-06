@@ -11,13 +11,17 @@
         android:id="@+id/callButton"
         android:layout_width="189dp"
         android:layout_height="176dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/ic_round_corners"
         android:contentDescription="Call"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_call"
         app:layout_constraintBottom_toTopOf="@+id/callText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/setupButton"
@@ -46,18 +50,15 @@
         android:id="@+id/infoText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="About"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/callButton"
         app:layout_constraintEnd_toStartOf="@+id/infoButton"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/setupText"
-        app:layout_constraintVertical_bias="0.242" />
+        app:layout_constraintTop_toBottomOf="@+id/setupText" />
 
     <TextView
         android:id="@+id/callText"
@@ -76,12 +77,26 @@
         android:id="@+id/infoButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="128dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/callButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/setupButton"
         app:srcCompat="@drawable/ic_info" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="76dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_logo" />
 
 </android.support.constraint.ConstraintLayout>
