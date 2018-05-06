@@ -26,13 +26,27 @@ public class MainActivity extends AppCompatActivity {
         infoButton = (ImageView) findViewById(R.id.infoButton);
         infoText = (TextView) findViewById(R.id.infoText);
 
-        setupButton.setOnClickListener(setUp);
+        setupButton.setOnClickListener(setup);
+        setupText.setOnClickListener(setup);
+
+        infoButton.setOnClickListener(info);
+        infoText.setOnClickListener(info);
+
+
     }
 
-    View.OnClickListener setUp = new View.OnClickListener() {
+    View.OnClickListener setup = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             Intent intent = new Intent(MainActivity.this, SetupActivity.class);
+            startActivity(intent);
+        }
+    };
+
+    View.OnClickListener info = new View.OnClickListener(){
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(MainActivity.this, AboutActivity.class);
             startActivity(intent);
         }
     };
